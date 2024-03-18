@@ -1,8 +1,13 @@
 import { Hero } from "@/components";
 import CustomFilter from "@/components/CustomFilter";
 import SearchBar from "@/components/SearchBar";
+import { fetchCars } from "@/utils";
 
-export default function Home() {
+export default async function Home() {
+
+  const allCars = await fetchCars();
+  console.log(allCars.)
+
   return (
     <main className="overflow-hidden">
       <Hero />
