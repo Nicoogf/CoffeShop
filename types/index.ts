@@ -18,5 +18,6 @@ export interface CafeProps {
     nombre: string,
     precio: number,
     imagen: string,
-    categoria: string
+    categoria: string,
+    transimission:string
 }
