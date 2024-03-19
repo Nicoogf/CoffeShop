@@ -6,6 +6,8 @@ export interface CustomButtonProps {
     handleClick?:
     MouseEventHandler<HTMLButtonElement>;
     btnType?: "button" | "submit";
+    textStyles?: string;
+    rightIcon? : boolean ;
 }
 
 export interface SearchManufacturerPros {
@@ -19,5 +21,5 @@ export interface CafeProps {
     precio: number,
     imagen: string,
     categoria: string,
-    transimission:string
+    transimission: string
 }

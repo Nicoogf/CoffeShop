@@ -4,6 +4,7 @@ import { CafeProps } from '@/types'
 import { useState } from 'react'
 import Image from 'next/image'
 import CustomButtom from './CustomButtom'
+import CafeDetails from './CafeDetails'
 
 interface CafeCardProps {
     cafe: CafeProps
@@ -12,6 +13,7 @@ interface CafeCardProps {
 
 const CafeCard = ({ cafe }: CafeCardProps) => {
     const { id, nombre, precio, imagen, categoria, transimission } = cafe
+    const [isOpen , setIsOpen] = useState(false)
     return (
 
         <div className='car-card group'>
@@ -59,14 +61,14 @@ const CafeCard = ({ cafe }: CafeCardProps) => {
 
                 <div className='car-card__btn-container'>
                     <CustomButtom title="Comprar"
-                        containerStyles='w-full py-[16px] rounded-full bg-primary-blue' 
+                        containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
                         textStyles="text-white text-[14px] leading-[17px] font-bold"
                         rightIcon="/right-arrow.svg"
-                        handleClick={()=>setIsOpen(true)}/>
-                    
+                        handleClick={() => setIsOpen(true)} />
                 </div>
-
             </div>
+
+            <CafeDetails />
         </div>
     )
 }
