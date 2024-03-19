@@ -1,13 +1,14 @@
-import { Hero } from "@/components";
+
+
+import { CafeCard, Hero } from "@/components";
 import CustomFilter from "@/components/CustomFilter";
 import SearchBar from "@/components/SearchBar";
 import { fetchCars } from "@/utils";
+import { listaDeProductos } from "@/utils/Products";
 
 export default async function Home() {
 
-  const allCars = await fetchCars();
-  console.log(allCars.results)
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
+  const isDataEmpty = !Array.isArray(listaDeProductos) || listaDeProductos.length < 1 || !listaDeProductos
 
   return (
     <main className="overflow-hidden">
@@ -29,8 +30,8 @@ export default async function Home() {
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map((car)=> (
-                <CafeCard car={car} />
+              {listaDeProductos?.map((cafe) => (
+                <CafeCard cafe={cafe} key={cafe} />
               ))}
             </div>
           </section>
@@ -39,7 +40,7 @@ export default async function Home() {
             <h2 className="text-black text-xl font-bold">
               Opps no se ha encontrado nada
             </h2>
-            <p> {allCars?.message}</p>
+            <p> {listaDeProductos?.message}</p>
           </div>
         )}
 
