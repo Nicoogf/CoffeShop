@@ -6,6 +6,7 @@ import SearchManufacturer from "./SearchManufacturer"
 import CustomFilter from "./CustomFilter";
 import Footer from "./Footer";
 import CafeCard from "./CafeCard"
+import CafeDetails from "./CafeDetails"
 
 export {
     Hero,
@@ -15,5 +16,6 @@ export {
     SearchManufacturer,
     CustomFilter,
     Footer,
-    CafeCard
+    CafeCard,
+    CafeDetails
 }

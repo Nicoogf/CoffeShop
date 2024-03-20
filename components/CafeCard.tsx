@@ -13,7 +13,7 @@ interface CafeCardProps {
 
 const CafeCard = ({ cafe }: CafeCardProps) => {
     const { id, nombre, precio, imagen, categoria, transimission } = cafe
-    const [isOpen , setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     return (
 
         <div className='car-card group'>
@@ -68,7 +68,7 @@ const CafeCard = ({ cafe }: CafeCardProps) => {
                 </div>
             </div>
 
-            <CafeDetails />
+            <CafeDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} cafe={cafe} />
         </div>
     )
 }
